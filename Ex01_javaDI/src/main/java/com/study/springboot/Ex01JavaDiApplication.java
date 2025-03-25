@@ -7,6 +7,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 import com.study.springboot.multi.Config;
 import com.study.springboot.multi.Person;
+import com.study.springboot.multi.Printer;
 
 // @SpringBootApplication => 이 주석이 있으면 자동으로 실행되면서 웹으로 실행됨
 public class Ex01JavaDiApplication {
@@ -19,6 +20,15 @@ public class Ex01JavaDiApplication {
 		
 		Person p1 = (Person)context.getBean("Person1");
 		p1.print();
+		
+		Person p2 = (Person)context.getBean("hello", Person.class);
+		p2.print();
+		
+		Printer printer = context.getBean("printerB", Printer.class);
+		
+		p1.setPrinter(printer);
+		p1.print();
+		
 	}
 
 }
