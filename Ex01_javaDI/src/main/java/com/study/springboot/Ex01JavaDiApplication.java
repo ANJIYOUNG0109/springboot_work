@@ -29,6 +29,13 @@ public class Ex01JavaDiApplication {
 		p1.setPrinter(printer);
 		p1.print();
 		
+		if(p1 == p2) {
+			System.out.println("동일한 객체");
+		} else {
+			System.out.println("서로 다른 객체");
+		}
 	}
-
+		
 }
+
+
